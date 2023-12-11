@@ -30,7 +30,7 @@ public class OrderResource {
 
     @GET
     public Response order() {
-        System.out.println("hello here is a order ");
+//        System.out.println("hello here is a order ");
         return Response.status(200).entity("hello order ")
                 .build();
     }

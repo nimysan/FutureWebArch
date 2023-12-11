@@ -8,7 +8,11 @@
         </layout>
     </appender>
 
-    <logger name="red.plaza.webapi" level="debug" additivity="false">
+    <logger name="org.glassfish" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="red.plaza.future" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 

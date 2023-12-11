@@ -4,7 +4,6 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.servlet.GrizzlyWebContainerFactory;
 import org.glassfish.jersey.server.ServerProperties;
 
-import javax.ws.rs.ApplicationPath;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;

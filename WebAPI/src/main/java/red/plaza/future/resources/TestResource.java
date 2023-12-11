@@ -11,7 +11,7 @@ import javax.ws.rs.Path;
 public class TestResource {
     @GET
     public Response order() {
-        System.out.println("hello here is test resource ");
+//        System.out.println("hello here is test resource ");
         return Response.status(200).entity("123")
                 .build();
     }
