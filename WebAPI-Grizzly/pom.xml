@@ -9,61 +9,26 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>WebAPI</artifactId>
+    <artifactId>WebAPI-Grizzly</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/javax.ws.rs/jsr311-api -->
         <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>jsr311-api</artifactId>
-            <version>1.1.1</version>
+            <groupId>red.plaza.future</groupId>
+            <artifactId>WebAPI</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-grizzly2-servlet -->
         <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-server</artifactId>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-grizzly2-servlet</artifactId>
             <version>${jersey.version}</version>
-        </dependency>
-
-
-        <!-- other help jar -->
-        <!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.1</version>
-        </dependency>
-
-        <!-- log slf4j setup -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>2.0.7</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jcl -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.4.6</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-            <version>1.7.22</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.test-framework.providers/jersey-test-framework-provider-grizzly2 -->
@@ -79,9 +44,27 @@
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
-            <scope>test</scope>
             <version>${jersey.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>red.plaza.future.WebAPIOnGrizzly</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

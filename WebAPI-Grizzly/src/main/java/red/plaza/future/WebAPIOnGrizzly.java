@@ -8,9 +8,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AppWithGrizzly {
+public class WebAPIOnGrizzly {
+
     public static void main(String[] args) throws IOException {
-//        String path = AppWithGrizzly.class.getClassLoader()
+        //        String path = AppWithGrizzly.class.getClassLoader()
 //                .getResource("jul-log.properties")
 //                .getFile();
 //        System.setProperty("java.util.logging.config.file", path);
