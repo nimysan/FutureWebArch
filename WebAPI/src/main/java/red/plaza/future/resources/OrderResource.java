@@ -3,7 +3,12 @@ package red.plaza.future.resources;
 import jakarta.inject.Singleton;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import lombok.extern.slf4j.Slf4j;
+import red.plaza.future.resources.representational.OrderState;
 
 //import javax.ws.rs.GET;
 //
@@ -24,14 +29,17 @@ import jakarta.ws.rs.core.Response;
  */
 
 
-@Path("/order")
+@Path(ResourceRegistry.RESOURCE_ORDER)
 @Singleton
+@Slf4j
 public class OrderResource {
 
     @GET
-    public Response order() {
-//        System.out.println("hello here is a order ");
-        return Response.status(200).entity("hello order ")
-                .build();
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response load(@PathParam("id") String orderId) {
+        OrderState orderState = OrderState.builder().orderId(orderId).orderDesc("hello").build();
+        log.info("--- {}", orderState);
+        return Response.status(200).entity(orderState).build();
     }
 }
