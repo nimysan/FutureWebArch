@@ -4,8 +4,7 @@ package red.plaza.future.resources;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.core.Response;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.Path;
 
 @Path("/test")
 public class TestResource {

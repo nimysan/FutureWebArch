@@ -17,7 +17,7 @@ public class AppWithGrizzly {
 
 
         System.out.println("Starting Thumb Server...");
-        Map<String, String> initParams = new HashMap<String, String>();
+        Map<String, String> initParams = new HashMap<>();
         //参数设置估计要参考这个 https://eclipse-ee4j.github.io/jersey.github.io/documentation/2.29/appendix-properties.html
         /*
          * Resource Order HTTP operation
