@@ -13,16 +13,17 @@ import org.slf4j.bridge.SLF4JBridgeHandler;
 
 import java.util.logging.LogManager;
 
+/**
+ * Log
+ */
 public class OrderServiceTest extends JerseyTest {
+    private final static Logger LOG = LoggerFactory.getLogger(OrderServiceTest.class);
 
     //forward jdk log to slf4j bridge
     static {
         LogManager.getLogManager().reset();
         SLF4JBridgeHandler.install();
     }
-
-    private final static Logger LOG = LoggerFactory.getLogger(OrderServiceTest.class);
-
 
     @Override
     protected Application configure() {

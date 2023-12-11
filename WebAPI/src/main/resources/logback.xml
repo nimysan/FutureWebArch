@@ -8,7 +8,7 @@
         </layout>
     </appender>
 
-    <logger name="red.plaza.webapi" level="debug" additivity="false">
+    <logger name="red.plaza.future" level="debug" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 
